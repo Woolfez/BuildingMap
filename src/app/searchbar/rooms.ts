@@ -1,0 +1,1 @@
+export let Rooms = [{number: 'A12'}, {number: 'A13'}, {number: 'B12'}];
