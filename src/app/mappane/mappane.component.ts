@@ -10,7 +10,8 @@ import { Component } from '@angular/core';
 export class MappaneComponent {
   fillColor = 'rgb(255, 0, 0)';
 
-  changeColor() {
+  changeColor(evt: any) {
+    console.log(evt);
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
