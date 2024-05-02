@@ -4,17 +4,16 @@ import { Component } from '@angular/core';
   selector: 'app-mappane',
   standalone: true,
   imports: [],
-  templateUrl: './mappane.component.svg',
+  templateUrl: './Floor1.svg',
   styleUrl: './mappane.component.css'
 })
 export class MappaneComponent {
-  fillColor = 'rgb(255, 0, 0)';
 
-  changeColor(evt: any) {
-    console.log(evt);
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    this.fillColor = `rgb(${r}, ${g}, ${b})`;
+  LogCords(evt: any) {
+    console.log(evt.x,evt.y);
+  }
+  LogCordsRooms(evt: any) {
+    console.log(evt.x,evt.y);
+    console.log(evt.srcElement.attributes.x.value,evt.srcElement.attributes.y.value)
   }
 }

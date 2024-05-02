@@ -1,1 +1,1 @@
-export let Rooms = [{number: 'A12'}, {number: 'A13'}, {number: 'B12'}];
+export let Rooms = [{number: 'A12', id: '1'}, {number: 'A13', id: '2'}, {number: 'B12', id: '3'}, {number: 'B13', id: '4'}, {number: 'C12', id: '5'}];
