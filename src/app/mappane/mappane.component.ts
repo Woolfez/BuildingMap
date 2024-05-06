@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { Cords } from '../../lib/Cords';
+
 
 @Component({
   selector: 'app-mappane',
@@ -9,11 +11,19 @@ import { Component } from '@angular/core';
 })
 export class MappaneComponent {
 
-  LogCords(evt: any) {
-    console.log(evt.x,evt.y);
+  cords!: Cords;
+
+  SetCordsRoom(evt: any) {
+    this.cords = new Cords(evt.srcElement.attributes.x.value, evt.srcElement.attributes.y.value);
+    this.setCords.emit(this.cords);
+
+
   }
-  LogCordsRooms(evt: any) {
-    console.log(evt.x,evt.y);
-    console.log(evt.srcElement.attributes.x.value,evt.srcElement.attributes.y.value)
+  SetCordsOutRoom(evt: any) {
+    this.cords = new Cords(evt.x, evt.y);
+    this.setCords.emit(this.cords);
   }
+
+  @Output() setCords = new EventEmitter<Cords>();
+
 }

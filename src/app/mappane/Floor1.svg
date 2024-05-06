@@ -10,14 +10,14 @@
 	.st5{display:inline;fill:#939598;stroke:#939598;stroke-width:5.6693;stroke-miterlimit:10;}
 	.st6{fill:none;stroke:#000000;stroke-width:5.6693;stroke-miterlimit:10;}
 </style>
-<g id="Background" (click)="LogCords($event)">
+<g id="Background" (click)="SetCordsOutRoom($event)">
 	<rect x="28.35" y="28.35" class="st0" width="150.24" height="535.75"/>
 	<rect x="589.61" y="31.18" class="st0" width="204.09" height="470.55"/>
 	<rect x="467.72" y="28.35" class="st0" width="124.72" height="388.35"/>
 	<rect x="385.51" y="28.35" class="st0" width="90.71" height="294.8"/>
 	<rect x="175.75" y="31.18" class="st0" width="212.6" height="243.78"/>
 </g>
-<g id="Rooms" (click)="LogCordsRooms($event)">
+<g id="Rooms" (click)="SetCordsRoom($event)">
 	<rect x="277.8" y="181.42" class="st1" width="17.01" height="87.87"/>
 	<rect x="130.39" y="181.42" class="st1" width="136.06" height="87.87"/>
 	<rect x="334.49" y="181.42" class="st1" width="17.01" height="87.87"/>
@@ -38,14 +38,14 @@
 	<rect x="646.3" y="36.85" class="st1" width="82.2" height="59.53"/>
 	<rect x="306.14" y="181.42" class="st1" width="17.01" height="87.87"/>
 </g>
-<g id="Stairs" (click)="LogCords($event)">
+<g id="Stairs" (click)="SetCordsOutRoom($event)">
 	<rect x="447.87" y="252.28" class="st2" width="31.18" height="68.03"/>
 	<rect x="595.28" y="422.36" class="st2" width="76.54" height="76.54"/>
 	<rect x="130.39" y="413.86" class="st2" width="42.52" height="51.02"/>
 	<rect x="130.39" y="371.34" class="st2" width="42.52" height="31.18"/>
 	<rect x="394.02" y="195.59" class="st2" width="42.52" height="127.56"/>
 </g>
-<g id="Service" (click)="LogCords($event)">
+<g id="Service" (click)="SetCordsOutRoom($event)">
 	<rect x="504.57" y="36.85" class="st3" width="130.39" height="59.53"/>
 	<rect x="742.68" y="462.05" class="st3" width="45.35" height="36.85"/>
 	<rect x="728.5" y="425.2" class="st3" width="59.53" height="25.51"/>
@@ -53,7 +53,7 @@
 	<rect x="130.39" y="280.63" class="st3" width="42.52" height="34.02"/>
 	<rect x="394.02" y="36.85" class="st3" width="42.52" height="53.86"/>
 </g>
-<g id="Hall" class="st4" (click)="LogCords($event)">
+<g id="Hall" class="st4" (click)="SetCordsOutRoom($event)">
 	<rect x="87.87" y="121.89" class="st5" width="36.85" height="348.66"/>
 	<rect x="87.87" y="121.89" class="st5" width="300.47" height="53.86"/>
 	<rect x="394.02" y="96.38" class="st5" width="48.19" height="93.54"/>
@@ -65,7 +65,7 @@
 	<rect x="677.48" y="419.53" class="st5" width="45.35" height="79.37"/>
 	<rect x="722.83" y="462.05" class="st5" width="14.17" height="36.85"/>
 </g>
-<g id="Stroke" (click)="LogCords($event)">
+<g id="Stroke" (click)="SetCordsOutRoom($event)">
 	<line class="st6" x1="28.35" y1="28.35" x2="28.35" y2="566.93"/>
 	<line class="st6" x1="31.18" y1="31.18" x2="796.54" y2="31.18"/>
 	<line class="st6" x1="31.18" y1="564.09" x2="181.42" y2="564.09"/>

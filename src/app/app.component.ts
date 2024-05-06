@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MappaneComponent } from '../app/mappane/mappane.component';
 import { SidebarComponent } from '../app/sidebar/sidebar.component';
-
+import { Cords } from '../lib/Cords';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -11,4 +11,7 @@ import { SidebarComponent } from '../app/sidebar/sidebar.component';
 })
 export class AppComponent {
   title = 'default';
+  setCords(coordinates: Cords){
+
+  }
 }

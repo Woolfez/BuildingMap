@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { SearchbarComponent } from '../searchbar/searchbar.component';
 
 @Component({
@@ -9,5 +9,13 @@ import { SearchbarComponent } from '../searchbar/searchbar.component';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
+  
+  roomSelectedFirst(firstRoom: any) {
+    console.log(firstRoom)
+  }
+  roomSelectedSecond(secondRoom: any) {
+    console.log(secondRoom)
+  }
 
+  
 }
