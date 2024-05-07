@@ -44,12 +44,6 @@ export class SearchbarComponent implements OnInit {
   roomSelected(event: MatAutocompleteSelectedEvent) {
     this.roomSelectEvent.emit(event.option.value.id);
   }
-
-  @Output() childClickEvent = new EventEmitter<MouseEvent>();
-
-  handleClick(event: MouseEvent){
-    this.childClickEvent.emit(event);
-  }
     
     
   ngOnInit() {

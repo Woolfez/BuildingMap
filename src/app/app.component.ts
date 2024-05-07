@@ -12,6 +12,8 @@ import { Cords } from '../lib/Cords';
 export class AppComponent {
   title = 'default';
   setCords(coordinates: Cords){
-
+  }
+  secondHandleClick(secondEvent: MouseEvent){
+    console.log('Второе поле')
   }
 }
