@@ -12,6 +12,8 @@ import { Cords } from '../../lib/Cords';
 
 export interface Room {
   number: string;
+  id: string;
+  coordinates?: Cords;
 }
 
 /**
@@ -39,10 +41,19 @@ export class SearchbarComponent implements OnInit {
   options: Room[] = Rooms;
   filteredOptions!: Observable<Room[]>;
 
-  @Output() roomSelectEvent = new EventEmitter<Number>();
+  @Output() roomSelectEvent = new EventEmitter<{ id: string, coordinates: Cords}>();
 
   roomSelected(event: MatAutocompleteSelectedEvent) {
     this.roomSelectEvent.emit(event.option.value.id);
+  }
+
+  roomSelectedCordsRoom(room: Room) {
+    if (room.coordinates !== undefined){
+    this.roomSelectEvent.emit({id: room.id, coordinates: room.coordinates});
+    console.log(room.coordinates)
+    } else {
+      console.error('Coordinates are not defined')
+    }
   }
     
     

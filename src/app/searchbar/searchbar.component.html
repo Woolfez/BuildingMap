@@ -1,7 +1,7 @@
 <mat-form-field class="full-width">
   <mat-label>{{label}}</mat-label>
   <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
-  <mat-autocomplete (optionSelected)="roomSelected($event)" #auto="matAutocomplete" [displayWith]="displayFn">
+  <mat-autocomplete (optionSelected)="roomSelectedCordsRoom($event.option.value)" #auto="matAutocomplete" [displayWith]="displayFn">
     @for (option of filteredOptions | async; track option) {
       <mat-option [value]="option">{{option.number}}</mat-option>
     }

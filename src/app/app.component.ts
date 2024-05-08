@@ -19,8 +19,17 @@ export class AppComponent {
   setCords(coordinates: Cords){
     if (this.context.firstFieldOpen === true) {
       this.context.cordsFirstField = coordinates;
+      console.log(this.context.firstFieldOpen)
+
     } else if (this.context.secondFieldOpen === true){
       this.context.cordsSecondField = coordinates;
+    }
+  }
+  roomSelected(event: { id: string, coordinates: Cords }) {
+    if (this.context.firstFieldOpen) {
+      this.context.cordsFirstField = event.coordinates;
+    } else if (this.context.secondFieldOpen) {
+      this.context.cordsSecondField = event.coordinates;
     }
   }
 
