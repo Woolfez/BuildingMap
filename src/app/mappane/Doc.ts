@@ -67,4 +67,57 @@ let myArray = [1,2,3,4,5];
 multiplyByTwoEven(myArray);
 console.log(myArray);
 
-//7. 
+//7. Вывести самую правую
+
+const points = [
+    {x: 10, y: 20},
+    {x: 30, y: 40},
+    {x: 50, y: 60},
+    {x: 70, y: 80},
+    {x: 90, y: 100}
+];
+
+let rightPoint = points[0];
+
+for (const point of points){
+    if (point.x > rightPoint.x) {
+        rightPoint = point
+    }
+}
+
+console.log(rightPoint)
+
+//8. Вывести поменять местами значения координат, если они отличаются знаком
+
+const points = [
+    {x: -10, y: 20},
+    {x: 30, y: 40},
+    {x: 50, y: -60},
+    {x: 70, y: 80},
+    {x: -90, y: 100}
+];
+
+for (const point of points) {
+    if ((point.x > 0 && point.y < 0) || (point.x < 0 && point.y > 0)) {
+        const newPoint = point.x;
+        point.x = point.y;
+        point.y = newPoint;
+    }
+}
+for (const point of points){
+    console.log(point.x, point.y);
+}
+
+//9. 
+const object1 = {a: ''};
+const object2 = {a: 'asd'};
+
+function objectWithEmpty(obj1, obj2){
+    if (obj1.a){
+        console.log(obj1, '1')
+    } else if (obj2.a) {
+        console.log(obj2, '2')
+    }
+}
+
+objectWithEmpty(object1, object2)

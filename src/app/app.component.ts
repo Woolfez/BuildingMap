@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { MappaneComponent } from '../app/mappane/mappane.component';
 import { SidebarComponent } from '../app/sidebar/sidebar.component';
 import { Cords } from '../lib/Cords';
+import { Context } from './Context';
+import { Rooms } from './searchbar/rooms';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -11,9 +14,25 @@ import { Cords } from '../lib/Cords';
 })
 export class AppComponent {
   title = 'default';
+  context = new Context();
+
   setCords(coordinates: Cords){
+    if (this.context.firstFieldOpen === true) {
+      this.context.cordsFirstField = coordinates;
+    } else if (this.context.secondFieldOpen === true){
+      this.context.cordsSecondField = coordinates;
+    }
   }
+
   secondHandleClick(secondEvent: MouseEvent){
-    console.log('Второе поле')
+    this.context.firstFieldOpen = false;
+    this.context.secondFieldOpen = true;
+    console.log(this.context.firstFieldOpen, this.context.secondFieldOpen)
+  }
+  firstHandleClick(firstEvent: MouseEvent){
+    this.context.firstFieldOpen = true;
+    this.context.secondFieldOpen = false;
+    console.log(this.context.firstFieldOpen, this.context.secondFieldOpen)
   }
 }
+
