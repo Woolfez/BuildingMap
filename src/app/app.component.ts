@@ -21,7 +21,9 @@ export class AppComponent {
   clickButtonMethod(){
     const svg: (SVGSVGElement | null) = <SVGSVGElement><unknown> document.querySelector("svg");
     if (svg != null){
-      console.log(svg.viewBox);
+      const width = Math.ceil(svg.viewBox.baseVal.width);
+      const height = Math.ceil(svg.viewBox.baseVal.height);
+      console.log(width, height);
     }
   }
 
