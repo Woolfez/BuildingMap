@@ -121,3 +121,4 @@ function objectWithEmpty(obj1, obj2){
 }
 
 objectWithEmpty(object1, object2)
+

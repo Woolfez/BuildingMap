@@ -1,20 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { MappaneComponent } from '../app/mappane/mappane.component';
 import { SidebarComponent } from '../app/sidebar/sidebar.component';
 import { Cords } from '../lib/Cords';
 import { Context } from './Context';
 import { Rooms } from './searchbar/rooms';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ MappaneComponent, SidebarComponent ],
+  imports: [ MappaneComponent, SidebarComponent, MatButtonModule ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'default';
   context = new Context();
+
+
+  clickButtonMethod(){
+    const svg: (SVGSVGElement | null) = <SVGSVGElement><unknown> document.querySelector("svg");
+    if (svg != null){
+      console.log(svg.viewBox);
+    }
+  }
 
   setCords(coordinates: Cords){
     if (this.context.firstFieldOpen === true) {
