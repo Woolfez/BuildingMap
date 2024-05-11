@@ -22,6 +22,7 @@ export class AppComponent {
   clickButtonMethod(){
     const svg: (SVGSVGElement | null) = <SVGSVGElement><unknown> document.querySelector("svg");
     if (svg != null){
+<<<<<<< HEAD
       console.log(svg.viewBox);
     
     let rowsSize = Math.ceil(svg.viewBox.baseVal.height);
@@ -41,6 +42,11 @@ export class AppComponent {
           }
         }
       }
+=======
+      const width = Math.ceil(svg.viewBox.baseVal.width);
+      const height = Math.ceil(svg.viewBox.baseVal.height);
+      console.log(width, height);
+>>>>>>> 2ac41afed1bf60a496e72a8bf355db3103fb6ba1
     }
 
     let start = this.context.cordsFirstField;
