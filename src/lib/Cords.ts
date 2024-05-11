@@ -5,8 +5,8 @@ export class Cords{
 
     constructor(x: number, y: number) {
         
-        this.x = x;
-        this.y = y;
+        this.x = Math.ceil(x);
+        this.y = Math.ceil(y);
 
     }
 
