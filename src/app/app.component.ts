@@ -22,46 +22,45 @@ export class AppComponent {
   clickButtonMethod(){
     const svg: (SVGSVGElement | null) = <SVGSVGElement><unknown> document.querySelector("svg");
     if (svg != null){
-<<<<<<< HEAD
-      console.log(svg.viewBox);
-    
-    let rowsSize = Math.ceil(svg.viewBox.baseVal.height);
-    let colonsSize = Math.ceil(svg.viewBox.baseVal.width);
-    let algorithmVar = new WaveAlgorithm();
-    algorithmVar.createBoard(colonsSize, rowsSize);
-    let group = svg.getElementById('Stroke');
-    //const group = document.getElementById("foo");
-    for (const child of [...group.children]) {
-      const line = <SVGGeometryElement><unknown> child;
+      let rowsSize = Math.ceil(svg.viewBox.baseVal.height);
+      let colonsSize = Math.ceil(svg.viewBox.baseVal.width);
+      let algorithmVar = new WaveAlgorithm();
+      algorithmVar.createBoard(colonsSize, rowsSize);
+      console.log('start fill borders');
+      let group = Array.from(svg.getElementById('Stroke').children);
+      const pointObj = svg.createSVGPoint();
+      
       for (let i = 0; i < algorithmVar.board.length; i++) {
         for (let j = 0; j < algorithmVar.board[i].length; j++){
-          const pointObj = new DOMPoint(i, j);
-          const isPointInStroke = line.isPointInStroke(pointObj);
-          if (isPointInStroke === true){
-            algorithmVar.board[i][j] = "b";
+          for (const child of group) {
+            const line = <SVGGeometryElement><unknown> child;
+        
+            pointObj.x = j;
+            pointObj.y = i;
+            const isPointInStroke = line.isPointInStroke(pointObj);
+            if (isPointInStroke === true){
+              algorithmVar.board[i][j] = "b";
+              break;
+            }
           }
         }
       }
-=======
-      const width = Math.ceil(svg.viewBox.baseVal.width);
-      const height = Math.ceil(svg.viewBox.baseVal.height);
-      console.log(width, height);
->>>>>>> 2ac41afed1bf60a496e72a8bf355db3103fb6ba1
-    }
+      console.log('--------');
 
-    let start = this.context.cordsFirstField;
-    let finish = this.context.cordsSecondField;
-    if (start === null || finish === null){
-      return;
+      let start = this.context.cordsFirstField;
+      let finish = this.context.cordsSecondField;
+      if (start === null || finish === null){
+        return;
+      }
+      algorithmVar.startingPoint = start;
+      algorithmVar.endPoint = finish;
+      algorithmVar.board[start.y][start.x] = 0;
+      algorithmVar.board[finish.y][finish.x] = 'f';
+      console.log('start computations');
+      algorithmVar.calculate();
+      console.log(algorithmVar.path);
     }
-    algorithmVar.startingPoint = start;
-    algorithmVar.endPoint = finish;
-    algorithmVar.board[start.y][start.x] = 0;
-    algorithmVar.board[finish.y][finish.x] = 'f';
-    algorithmVar.calculate();
-    console.log(algorithmVar.path);
   }
-}
 
   setCords(coordinates: Cords){
     if (this.context.firstFieldOpen === true) {
@@ -82,12 +81,10 @@ export class AppComponent {
   secondHandleClick(secondEvent: MouseEvent){
     this.context.firstFieldOpen = false;
     this.context.secondFieldOpen = true;
-    console.log(this.context.firstFieldOpen, this.context.secondFieldOpen)
   }
   firstHandleClick(firstEvent: MouseEvent){
     this.context.firstFieldOpen = true;
     this.context.secondFieldOpen = false;
-    console.log(this.context.firstFieldOpen, this.context.secondFieldOpen)
   }
 }
 
