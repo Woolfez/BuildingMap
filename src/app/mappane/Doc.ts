@@ -122,3 +122,10 @@ function objectWithEmpty(obj1, obj2){
 
 objectWithEmpty(object1, object2)
 
+//10. 
+let a = 1;
+let b = 2;
+
+if (b - a === 1){
+    console.log('done')
+}

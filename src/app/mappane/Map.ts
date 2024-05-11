@@ -31,6 +31,8 @@ for (let i = 0; i < rowsCount; i++){
 
 board[rowsCount-1][0] = 0;
 board[0][colonsCount-1] = 'f';
+board[0][2] = 'b'; //border
+board[1][0] = 'b';
 //Вверх. вниз, влево, вправо. Добавить 4 направления диагональных
 const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
 
@@ -63,25 +65,31 @@ while (finishUnchecked && canContinue){
     printArray(board);
 }
 
-let path = [];
 let x = colonsCount-1;
 let y = 0;
+let path = [[y,x]];
+
+// board[rowsCount-1][0] = 0;
+// board[0][colonsCount-1] = 'f';
+// Пока столбец != 0 И строка != rowsCount-1 Тогда
 
 if (finishUnchecked === false){
-    for (const [dx, dy] of directions){
-        const ni = y + dy;
-        const nj = x + dx;
-        if (ni >= 0 && ni < board.length && nj >= 0 && nj < board[y].length){
-            let checked = board[ni][nj];
-            let current = board[y][x];
-            if (current - checked === 1){
-                y = ni;
-                x = nj;
-                path.push([y,x]);
-                printArray(path);
+    while (x != 0 || y != rowsCount-1){
+        for (const [dx, dy] of directions){
+            const ni = y + dy;
+            const nj = x + dx;
+            if (ni >= 0 && ni < board.length && nj >= 0 && nj < board[y].length){
+                let checked = board[ni][nj];
+                let current = board[y][x];
+                if (current - checked === 1){
+                    y = ni;
+                    x = nj;
+                    path.push([y,x]);
+                    printArray(path);
+                    break;
+                }
             }
-        }
+        }   
     }
-
 }
 
