@@ -7,7 +7,6 @@ import { Rooms } from './searchbar/rooms';
 import {MatButtonModule} from '@angular/material/button';
 import { WaveAlgorithm } from '../lib/WaveAlgorithm';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -61,6 +60,7 @@ export class AppComponent {
       console.log(algorithmVar.path);
     }
   }
+  
 
   setCords(coordinates: Cords){
     if (this.context.firstFieldOpen === true) {
